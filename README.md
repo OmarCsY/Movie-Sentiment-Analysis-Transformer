@@ -1,9 +1,9 @@
 # SentimentScope: Movie Sentiment Analysis using Transformers
 
 ## 📌 Project Overview
-This project focuses on building and training a **Transformer-based model** from scratch to perform **Sentiment Analysis** on the IMDB movie reviews dataset. The goal is to classify reviews as either **Positive (1)** or **Negative (0)**.
+This project focuses on building and training a **Transformer-based model** from scratch to perform **Sentiment Analysis** on the IMDB movie reviews dataset. The goal is to classify reviews as either **Positive (1)** or **Negative (0)** to enhance recommendation systems.
 
-Unlike using a pre-trained BERT model directly, this project involves constructing the Transformer architecture (Attention Head, Multi-Head Attention, FeedForward, and Blocks) and customizing it for a binary classification task using **PyTorch**.
+Unlike using a pre-trained BERT model directly, this project demonstrates a deep understanding of NLP by constructing the Transformer architecture components (Attention Head, Multi-Head Attention, FeedForward, and Blocks) and customizing them for a binary classification task using **PyTorch**.
 
 ## 🛠️ Technologies & Tools
 * **Language:** Python 3.x
@@ -13,43 +13,24 @@ Unlike using a pre-trained BERT model directly, this project involves constructi
 * **Visualization:** Matplotlib
 
 ## 📂 Project Structure
-The repository contains the main notebook and data handling logic:
+The repository contains the main notebook which handles the end-to-end pipeline:
 
-* `SentimentScope_starter.ipynb`: The main Jupyter Notebook containing:
-    * Data Loading & Preprocessing (IMDB Dataset).
-    * Custom `IMDBDataset` class for PyTorch DataLoader.
-    * **Model Architecture:** Custom `DemoGPT` class with modified Classification Head.
-    * Training Loop (CrossEntropyLoss, AdamW Optimizer).
-    * Evaluation & Testing.
+* **Data Loading & Preprocessing:** Handling the IMDB Dataset and creating a custom `IMDBDataset` class for the PyTorch DataLoader.
+* **Model Architecture:** A custom `DemoGPT` class built from scratch, featuring a modified Classification Head.
+* **Training Loop:** Implemented using CrossEntropyLoss and AdamW Optimizer.
+* **Evaluation:** Testing the model's accuracy on unseen data.
 
 ## 🧠 Model Architecture
-The model is a custom Transformer Decoder-based architecture designed for classification:
-1.  **Tokenizer:** Uses `bert-base-uncased` tokenizer for subword splitting.
-2.  **Embeddings:** Learned Token Embeddings + Positional Embeddings.
-3.  **Transformer Blocks:** Stacked layers of Multi-Head Attention and FeedForward networks.
-4.  **Pooling:** Applies **Mean Pooling** across the time dimension to summarize the sequence.
+The model is a custom Transformer Decoder-based architecture designed specifically for classification:
+1.  **Tokenizer:** Utilizes `bert-base-uncased` tokenizer for efficient subword splitting.
+2.  **Embeddings:** Combines Learned Token Embeddings with Positional Embeddings.
+3.  **Transformer Blocks:** Stacked layers of Multi-Head Attention and FeedForward networks to capture contextual relationships.
+4.  **Pooling Mechanism:** Applies **Mean Pooling** across the time dimension to create a single vector representation for the entire sequence.
 5.  **Classifier Head:** A final Linear layer mapping the pooled output to 2 classes (Positive/Negative).
-
-## 🚀 How to Run
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/OmarCsY/Movie-Sentiment-Analysis-Transformer.git](https://github.com/OmarCsY/Movie-Sentiment-Analysis-Transformer.git)
-    ```
-2.  **Install dependencies:**
-    Ensure you have PyTorch and Transformers installed:
-    ```bash
-    pip install torch transformers pandas matplotlib
-    ```
-3.  **Open the Notebook:**
-    Launch Jupyter Notebook or JupyterLab and open `SentimentScope_starter.ipynb`.
-4.  **Run the Cells:**
-    Execute the cells sequentially to load data, train the model, and evaluate performance.
-
-> **Note:** The project requires a GPU for efficient training. If running locally, ensure CUDA is set up, or use Google Colab.
 
 ## 📊 Results
 * **Validation Accuracy:** Achieved ~79% after 3 epochs.
-* **Test Accuracy:** Achieved **76.17%**, exceeding the project requirement of 75%.
+* **Test Accuracy:** Achieved **76.17%**, successfully exceeding the project benchmark of 75%.
 
 ---
 
